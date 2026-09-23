@@ -319,7 +319,7 @@ export const PLAYLIST_CONTENT = {
     {
       title: "Lesung Pipi",
       artist: "Raim Laode",
-      file: "public/music/Lesung.mp3",
+      file: "/music/Lesung.mp3",
       art: "🌙",
       note: "a song that reminds me of you",
       startTime: 116,
@@ -329,7 +329,7 @@ export const PLAYLIST_CONTENT = {
     {
       title: "Akad",
       artist: "Payung Teduh",
-      file: "public/music/Akad.mp3",
+      file: "/music/Akad.mp3",
       art: "🌷",
       note: "for the love we share",
       startTime: 75,
@@ -339,7 +339,7 @@ export const PLAYLIST_CONTENT = {
     {
       title: "Bergema Sampai Selamanya",
       artist: "Nadhif Basamalah",
-      file: "public/music/Bergema.mp3",
+      file: "/music/Bergema.mp3",
       art: "💌",
       note: "for us, always and forever",
       startTime: 0,

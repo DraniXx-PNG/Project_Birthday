@@ -4,9 +4,9 @@ import { MEMORY_CONTENT, PALETTE } from "../../constants";
 import { SectionHeading } from "../shared";
 
 const MEMORY_IMAGES = [
-  "public/images/foto1.jpeg",
-  "public/images/foto2.jpeg",
-  "public/images/foto3.jpeg",
+  "/images/foto1.jpeg",
+  "/images/foto2.jpeg",
+  "/images/foto3.jpeg",
 ];
 
 export default function MemoryGallerySection() {
