@@ -1,0 +1,177 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: #020617;
+  color: white;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ======================================================
+   BIRTHDAY FALLING FLOWERS
+   ====================================================== */
+
+.birthday-falling-particle {
+  position: fixed;
+  pointer-events: none;
+  user-select: none;
+  z-index: 90;
+  line-height: 1;
+  will-change: transform, opacity;
+  animation-name: birthdayFlowerFall;
+  animation-duration: var(--duration);
+  animation-delay: var(--delay);
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+}
+
+@keyframes birthdayFlowerFall {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+    opacity: 0;
+  }
+  4% {
+    transform:
+      translate3d(0, calc(var(--fall-distance) * 0.04), 0)
+      rotate(calc(var(--rotation) * 0.04));
+    opacity: 1;
+  }
+  20% {
+    transform:
+      translate3d(0, calc(var(--fall-distance) * 0.20), 0)
+      rotate(calc(var(--rotation) * 0.20));
+    opacity: 1;
+  }
+  40% {
+    transform:
+      translate3d(0, calc(var(--fall-distance) * 0.40), 0)
+      rotate(calc(var(--rotation) * 0.40));
+    opacity: 1;
+  }
+  60% {
+    transform:
+      translate3d(0, calc(var(--fall-distance) * 0.60), 0)
+      rotate(calc(var(--rotation) * 0.60));
+    opacity: 1;
+  }
+  80% {
+    transform:
+      translate3d(0, calc(var(--fall-distance) * 0.80), 0)
+      rotate(calc(var(--rotation) * 0.80));
+    opacity: 1;
+  }
+  94% {
+    transform:
+      translate3d(0, calc(var(--fall-distance) * 0.94), 0)
+      rotate(calc(var(--rotation) * 0.94));
+    opacity: 1;
+  }
+  100% {
+    transform:
+      translate3d(0, var(--fall-distance), 0)
+      rotate(var(--rotation));
+    opacity: 0;
+  }
+}
+
+/* ======================================================
+   LIGHTWEIGHT BACKGROUND MOTION
+   ====================================================== */
+
+.enchanted-star {
+  opacity: 0.15;
+  animation: enchantedStarTwinkle var(--star-duration) ease-in-out var(--star-delay) infinite;
+  will-change: opacity;
+}
+
+.enchanted-firefly {
+  animation: enchantedFireflyFloat var(--firefly-duration) ease-in-out var(--firefly-delay) infinite;
+  will-change: transform, opacity;
+}
+
+.hero-petal {
+  animation: enchantedPetalFall var(--petal-duration) linear var(--petal-delay) infinite;
+  will-change: transform;
+}
+
+@keyframes enchantedStarTwinkle {
+  0%,
+  100% {
+    opacity: 0.15;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+
+@keyframes enchantedFireflyFloat {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0.2;
+  }
+  20% {
+    transform: translate3d(10px, -18px, 0);
+    opacity: 1;
+  }
+  50% {
+    transform: translate3d(-6px, 0, 0);
+    opacity: 0.5;
+  }
+  75% {
+    transform: translate3d(8px, 14px, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes enchantedPetalFall {
+  0% {
+    transform: translate3d(0, -20px, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(30px, 55vh, 0) rotate(180deg);
+  }
+  75% {
+    transform: translate3d(-20px, 82vh, 0) rotate(270deg);
+  }
+  100% {
+    transform: translate3d(0, 110vh, 0) rotate(360deg);
+  }
+}
+
+@media (max-width: 640px) {
+  html {
+    scroll-snap-type: none;
+  }
+
+  .birthday-falling-particle {
+    font-size: min(var(--particle-size, 18px), 19px);
+  }
+
+  /* Blur is visually nice, but expensive on small GPUs. */
+  .backdrop-blur-md,
+  .backdrop-blur-sm {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .enchanted-star,
+  .enchanted-firefly,
+  .hero-petal,
+  .birthday-falling-particle {
+    animation: none !important;
+    opacity: 0 !important;
+  }
+}
