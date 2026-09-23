@@ -1,5 +1,5 @@
 [build]
-  command = "cd web-Shanq && npm run build"
+  command = "cd web-Shanq && npm install && npm run build"
   publish = "web-Shanq/dist"
 
 [[redirects]]
