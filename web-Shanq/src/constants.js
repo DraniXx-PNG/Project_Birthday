@@ -317,12 +317,22 @@ export const PLAYLIST_CONTENT = {
 
   songs: [
     {
+      title: "Bergema Sampai Selamanya",
+      artist: "Nadhif Basamalah",
+      file: "/music/Bergema.mp3",
+      art: "💌",
+      note: "for us, always and forever",
+      startTime: 2,
+      endTime: null,
+    },
+
+    {
       title: "Lesung Pipi",
       artist: "Raim Laode",
       file: "/music/Lesung.mp3",
       art: "🌙",
       note: "a song that reminds me of you",
-      startTime: 116,
+      startTime: 115,
       endTime: 226,
     },
 
@@ -332,18 +342,8 @@ export const PLAYLIST_CONTENT = {
       file: "/music/Akad.mp3",
       art: "🌷",
       note: "for the love we share",
-      startTime: 75,
+      startTime: 74,
       endTime: 165,
-    },
-
-    {
-      title: "Bergema Sampai Selamanya",
-      artist: "Nadhif Basamalah",
-      file: "/music/Bergema.mp3",
-      art: "💌",
-      note: "for us, always and forever",
-      startTime: 0,
-      endTime: null,
     },
   ],
 };

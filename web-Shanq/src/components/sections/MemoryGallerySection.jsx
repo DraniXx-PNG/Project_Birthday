@@ -4,9 +4,12 @@ import { MEMORY_CONTENT, PALETTE } from "../../constants";
 import { SectionHeading } from "../shared";
 
 const MEMORY_IMAGES = [
-  "/images/foto1.jpeg",
-  "/images/foto2.jpeg",
-  "/images/foto3.jpeg",
+  "/images/Foto1.jpeg",
+  "/images/Foto2.jpeg",
+  "/images/Foto3.jpeg",
+  "/images/Foto4.jpeg",
+  "/images/Foto5.jpeg",
+  "/images/Foto6.jpeg",
 ];
 
 export default function MemoryGallerySection() {
@@ -23,7 +26,7 @@ export default function MemoryGallerySection() {
           {MEMORY_CONTENT.title}
         </SectionHeading>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-6 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-6 md:gap-8">
           {MEMORY_IMAGES.map((image, i) => (
             <motion.div
               key={image}
@@ -37,9 +40,19 @@ export default function MemoryGallerySection() {
                 y: 0,
                 rotate: i % 2 === 0 ? -2 : 2,
               }}
-              viewport={{ once: true, amount: 0.35 }}
-              transition={{ duration: 0.8, delay: i * 0.12 }}
-              whileHover={{ rotate: 0, scale: 1.03 }}
+              viewport={{
+                once: true,
+                amount: 0.2,
+              }}
+              transition={{
+                duration: 0.8,
+                delay: i * 0.08,
+                ease: "easeOut",
+              }}
+              whileHover={{
+                rotate: 0,
+                scale: 1.03,
+              }}
               className="relative rounded-xl p-2"
               style={{
                 background: "rgba(13,18,48,0.6)",
